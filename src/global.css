@@ -1,0 +1,16 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #19b6f6;
+  --gray: #e0e0e0;
+}
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
