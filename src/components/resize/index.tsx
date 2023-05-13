@@ -48,6 +48,7 @@ export function resizable(node: HTMLElement): void {
       }
     }
   });
+  
   document.addEventListener('mouseup', () => {
     down = false;
   });

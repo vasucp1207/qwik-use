@@ -27,7 +27,6 @@ export const AppCSS = `
   justify-content: center;
   width: 100px;
   height: 100px;
-  border: 2px solid var(--gray);
   background: var(--blue);
   color: white;
 }

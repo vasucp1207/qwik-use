@@ -1,4 +1,4 @@
-import { Demo } from './components/useLocalStorage/demo';
+import { Demo } from './components/resize/demo';
 
 export default () => {
   return (
