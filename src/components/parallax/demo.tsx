@@ -1,16 +1,14 @@
-import { component$, useSignal, useVisibleTask$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, useStylesScoped$ } from '@builder.io/qwik';
 import '../../global.css';
 import { parallax } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
+  useStylesScoped$(AppCSS);
 
   const ele = useSignal<Element>();
 
   useVisibleTask$(() => {
-    if(ele.value) {
-      parallax(ele.value as HTMLElement);
-    }
+    parallax(ele.value as HTMLElement);
   })
 
   return (
@@ -22,9 +20,6 @@ export const Demo = component$(() => {
 
 export const AppCSS = `
 .drag {
-  position: absolute;
-  left: 45%;
-  top: 40%;
   display: flex;
   align-items: center;
   justify-content: center;

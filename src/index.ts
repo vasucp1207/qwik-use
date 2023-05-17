@@ -1,2 +1,10 @@
-export { Logo } from './components/logo/logo';
-export { Counter } from './components/counter/counter';
+export { draggable } from './components/dragDiv/index';
+export { setDraggable } from './components/dragSet/index';
+export { keyStroke } from './components/keyStroke/index';
+export { parallax } from './components/parallax/index';
+export { pinch } from './components/pinch/index';
+export { resizable } from './components/resize/index';
+export { flip } from './components/useFlip/index';
+export { mousePos } from './components/useMouse/index';
+export { useLocalStorage } from './components/useLocalStorage/index';
+export { useSessionStorage } from './components/useSessionStorage/index';

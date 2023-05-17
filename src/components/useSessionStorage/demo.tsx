@@ -1,9 +1,9 @@
-import { component$, useStyles$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import '../../global.css';
 import { useSessionStorage } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
+  useStylesScoped$(AppCSS);
 
   const count = useSessionStorage('count', 0);
 

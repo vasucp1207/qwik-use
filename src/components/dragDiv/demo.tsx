@@ -1,16 +1,14 @@
-import { component$, useSignal, useVisibleTask$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, useStylesScoped$ } from '@builder.io/qwik';
 import '../../global.css';
 import { draggable } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
+  useStylesScoped$(AppCSS);
 
   const ele = useSignal<Element>();
 
   useVisibleTask$(() => {
-    if(ele.value) {
-      draggable(ele.value as HTMLElement);
-    }
+    draggable(ele.value as HTMLElement);
   })
 
   return (

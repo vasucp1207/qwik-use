@@ -1,16 +1,14 @@
-import { component$, useSignal, useVisibleTask$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, useStylesScoped$ } from '@builder.io/qwik';
 import '../../global.css';
 import { keyStroke } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
+  useStylesScoped$(AppCSS);
 
   const ele = useSignal<Element>();
 
   useVisibleTask$(() => {
-    if(ele.value) {
-      keyStroke(ele.value as HTMLElement, 50);
-    }
+    keyStroke(ele.value as HTMLElement, 50);
   })
 
   return (
@@ -23,8 +21,6 @@ export const Demo = component$(() => {
 export const AppCSS = `
 .cont {
   position: relative;
-  margin-left: 300px;
-  margin-top: 300px;
 }
 
 .drag {

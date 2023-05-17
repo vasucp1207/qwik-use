@@ -1,10 +1,8 @@
-import { component$, useStyles$ } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import '../../global.css';
 import { mousePos } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
-
   const { x, y } = mousePos();
 
   return (
@@ -14,7 +12,3 @@ export const Demo = component$(() => {
     </div>
   );
 });
-
-export const AppCSS = `
-
-`;

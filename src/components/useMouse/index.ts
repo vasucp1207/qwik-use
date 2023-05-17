@@ -1,20 +1,21 @@
 /* eslint-disable qwik/use-method-usage */
-import { useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { $, useSignal, useOnDocument } from "@builder.io/qwik";
 
 export function mousePos() {
-  const x = useSignal(0);
-  const y = useSignal(0);
+  const x_coor = useSignal(0);
+  const y_coor = useSignal(0);
 
-  useVisibleTask$(() => {
-    document.addEventListener('mousemove', (e) => {
-      x.value = e.clientX;
-      y.value = e.clientY;
+  useOnDocument(
+    'mousemove',
+    $((event) => {
+      const { x, y } = event as MouseEvent;
+      x_coor.value = x;
+      y_coor.value = y;
     })
-  })
-
+  )  
 
   return {
-    x: x.value,
-    y: y.value
+    x: x_coor.value,
+    y: y_coor.value
   }
 }

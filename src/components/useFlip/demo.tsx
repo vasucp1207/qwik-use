@@ -1,16 +1,14 @@
-import { component$, useSignal, useVisibleTask$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, useStylesScoped$ } from '@builder.io/qwik';
 import '../../global.css';
 import { flip } from './index';
 
 export const Demo = component$(() => {
-  useStyles$(AppCSS);
+  useStylesScoped$(AppCSS);
 
   const ele = useSignal<Element>();
 
   useVisibleTask$(() => {
-    if (ele.value) {
-      flip(ele.value as HTMLElement);
-    }
+    flip(ele.value as HTMLElement);
   })
 
   return (
@@ -37,9 +35,6 @@ export const Demo = component$(() => {
 
 export const AppCSS = `
 .flip {
-  position: absolute;
-  left: 40%;
-  top: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
